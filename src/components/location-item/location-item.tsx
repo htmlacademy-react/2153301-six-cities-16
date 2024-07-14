@@ -5,7 +5,7 @@ function LocationItem({city}): JSX.Element {
         <span>{city}</span>
       </a>
     </li>
-  )
+  );
 }
 
 export default LocationItem;

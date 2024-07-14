@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Header from '@components/header';
+import LocationList from './components/location-list/location-list';
+import PlacesSorting from './components/places-sorting/places-sorting';
+import MainPage from './components/main/main';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -7,6 +11,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <h1>Hello, World!</h1>
+    <Header/>
+    <MainPage/>
   </React.StrictMode>
 );
