@@ -8,7 +8,7 @@ function Header(): JSX.Element {
       <div className="container">
         <div className="header__wrapper">
           <div className="header__left">
-            {/*<Logo/>*/}
+            <Logo/>
           </div>
           <nav className="header__nav">
             <ul className="header__nav-list">
