@@ -1,12 +1,6 @@
-import {SORTING_ITEMS} from '@constants';
+import {sortingItems} from '@constants';
 import {spaceToUnderscore} from '../../utils';
-
-
-function PlacesSortingItem ({sortingItem}) : JSX.Element {
-  return (
-    <li className="places__option" tabIndex="0">{sortingItem}</li>
-  );
-}
+import PlacesSortingItem from "@components/places-sorting-item";
 
 function PlacesSorting(): JSX.Element {
   return (
@@ -19,15 +13,9 @@ function PlacesSorting(): JSX.Element {
         </svg>
       </span>
       <ul className="places__options places__options--custom places__options--opened">
-        {/*<li className="places__option places__option--active" tabIndex="0">Popular</li>*/}
-        {/*<li className="places__option" tabIndex="0">Price: low to high</li>*/}
-        {/*<li className="places__option" tabIndex="0">Price: high to low</li>*/}
-        {/*<li className="places__option" tabIndex="0">Top rated first</li>*/}
-
-        {SORTING_ITEMS.map((item) => <PlacesSortingItem sortingItem={item} key={spaceToUnderscore(item)}/>)}
+        {sortingItems.map((item) => <PlacesSortingItem sortingItem={item} key={spaceToUnderscore(item)}/>)}
       </ul>
     </form>
-
   );
 }
 

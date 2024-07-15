@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Header from '@components/header';
-import LocationList from './components/location-list/location-list';
-import PlacesSorting from './components/places-sorting/places-sorting';
-import MainPage from './components/main/main';
+import { BrowserRouter } from 'react-router-dom';
+import App from "./app";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,7 +9,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <Header/>
-    <MainPage/>
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
   </React.StrictMode>
 );
