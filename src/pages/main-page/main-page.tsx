@@ -1,9 +1,10 @@
 import {CityMap} from "@constants";
 import {OfferPreview} from "@customType/offer";
 import PlacesSorting from '@components/places-sorting/places-sorting';
-import {spaceToUnderscore} from "../../utils";
+import {spaceToUnderscore} from "@utils/utils";
 import Header from "@components/header";
 import NoOffers from "@components/no-offers";
+import OfferCard from "@components/offer-card";
 
 type MainPageProps = {
   offers: OfferPreview[];
@@ -43,7 +44,14 @@ function MainPage({offers, locations}: MainPageProps): JSX.Element {
 
                   <div className="cities__places-list places__list tabs__content">
 
-
+                    {offers.map((dataCard) => (
+                      <OfferCard
+                        variant="cities"
+                        size="large"
+                        key={dataCard.id}
+                        offer={dataCard}
+                      />
+                    ))}
 
                   </div>
 
