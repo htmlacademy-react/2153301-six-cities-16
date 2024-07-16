@@ -3,6 +3,7 @@ import { OfferPreview } from '@customType/offer';
 import { getRatingWidth } from '@utils/offer';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
+
 type Size = 'small' | 'medium' | 'large';
 type CardType = 'favorites' | 'cities';
 type OfferCardProps = {
@@ -10,6 +11,7 @@ type OfferCardProps = {
   size: Size;
   variant?: CardType;
 };
+
 function getImageSize(size: Size) {
   if (size === 'small') {
     return { width: '150', height: '110' };

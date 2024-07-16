@@ -1,5 +1,5 @@
 import {sortingItems} from '@constants';
-import {spaceToUnderscore} from '../../utils';
+import {spaceToUnderscore} from '@utils/utils';
 import PlacesSortingItem from "@components/places-sorting-item";
 
 function PlacesSorting(): JSX.Element {
