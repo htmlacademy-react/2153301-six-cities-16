@@ -1,10 +1,10 @@
-import {CityMap} from "@constants";
-import {OfferPreview} from "@customType/offer";
+import {CityMap} from '@constants';
+import {OfferPreview} from '@customType/offer';
 import PlacesSorting from '@components/places-sorting/places-sorting';
-import {spaceToUnderscore} from "@utils/utils";
-import Header from "@components/header";
-import NoOffers from "@components/no-offers";
-import OfferCard from "@components/offer-card";
+import {spaceToUnderscore} from '@utils/utils';
+import Header from '@components/header';
+import NoOffers from '@components/no-offers';
+import OfferCard from '@components/offer-card';
 
 type MainPageProps = {
   offers: OfferPreview[];
@@ -46,10 +46,10 @@ function MainPage({offers, locations}: MainPageProps): JSX.Element {
 
                     {offers.map((dataCard) => (
                       <OfferCard
+                        offer={dataCard}
                         variant="cities"
                         size="large"
                         key={dataCard.id}
-                        offer={dataCard}
                       />
                     ))}
 
@@ -61,7 +61,7 @@ function MainPage({offers, locations}: MainPageProps): JSX.Element {
                 </div>
               </div>
             </div>
-          ) : <NoOffers  currentLocation={locations.Paris.name}/>
+          ) : <NoOffers currentLocation={locations.Paris.name}/>
         }
       </main>
     </div>

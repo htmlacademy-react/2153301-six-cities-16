@@ -1,1 +1,1 @@
-export {default} from './places-sorting-item'
+export {default} from './places-sorting-item';

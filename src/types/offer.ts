@@ -6,24 +6,10 @@ export type Offer = Omit<OfferPreview, 'previewImage'> & {
   description: string;
   bedrooms: number;
   goods: string[];
-  // goods: "Towels" |
-  //   "Fridge" |
-  //   "Washer" |
-  //   "Washing machine" |
-  //   "Baby seat" |
-  //   "Breakfast" |
-  //   "Cable TV" |
-  //   "Dishwasher" |
-  //   "Air conditioning" |
-  //   "Wi-Fi" |
-  //   "Kitchen" |
-  //   "Coffee machine" |
-  //   "Heating";
   host: Host;
   images: string[];
   maxAdults: number;
 };
-
 
 
 export type OfferPreview = {

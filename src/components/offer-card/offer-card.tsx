@@ -1,8 +1,18 @@
-import { AppRoute } from '@constants';
-import { OfferPreview } from '@customType/offer';
-import { getRatingWidth } from '@utils/offer';
+import {AppRoute} from '@constants';
+import {OfferPreview} from '@customType/offer';
+import {getRatingWidth} from '@utils/offer';
 import clsx from 'clsx';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+
+const smallCardDimensions = {
+  width: '150',
+  height: '110'
+};
+
+const largeCardDimensions = {
+  width: '260',
+  height: '200'
+};
 
 type Size = 'small' | 'medium' | 'large';
 type CardType = 'favorites' | 'cities';
@@ -13,12 +23,15 @@ type OfferCardProps = {
 };
 
 function getImageSize(size: Size) {
-  if (size === 'small') {
-    return { width: '150', height: '110' };
+  if (size) {
+    if (size === 'small') {
+      return smallCardDimensions;
+    }
+    if (size === 'large') {
+      return largeCardDimensions;
+    }
   }
-  if (size === 'large') {
-    return { width: '260', height: '200' };
-  }
+
 }
 
 function OfferCard({
@@ -65,16 +78,17 @@ function OfferCard({
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{ width: `${getRatingWidth(offer.rating)}` }}></span>
+            <span style={{width: `${getRatingWidth(offer.rating)}`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
-        <Link to={`${AppRoute.Offer}/${offer.id}`}>{offer.title}</Link>
+          <Link to={`${AppRoute.Offer}/${offer.id}`}>{offer.title}</Link>
         </h2>
         <p className="place-card__type">{offer.type}</p>
       </div>
     </article>
   );
 }
+
 export default OfferCard;

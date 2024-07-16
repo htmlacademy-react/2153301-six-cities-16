@@ -1,6 +1,6 @@
 import Logo from '@components/logo';
 import {AppRoute} from '@constants';
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 function Header(): JSX.Element {
   return (

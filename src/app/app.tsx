@@ -1,7 +1,7 @@
-import {AppRoute, CityMap} from "@constants";
-import {OFFERS} from "@mocks/offers";
+import {AppRoute, CityMap} from '@constants';
+import {OFFERS} from '@mocks/offers';
 import { Route, Routes } from 'react-router-dom';
-import MainPage from "@pages/main-page";
+import MainPage from '@pages/main-page';
 
 function App():JSX.Element {
   return (
