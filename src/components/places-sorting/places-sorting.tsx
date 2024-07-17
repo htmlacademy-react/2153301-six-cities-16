@@ -13,7 +13,7 @@ function PlacesSorting(): JSX.Element {
         </svg>
       </span>
       <ul className="places__options places__options--custom places__options--opened">
-        {sortingItems.map((item) => <PlacesSortingItem sortingItem={item} key={spaceToUnderscore(item)}/>)}
+        {sortingItems.map((item:string) => <PlacesSortingItem sortingItem={item} key={spaceToUnderscore(item)}/>)}
       </ul>
     </form>
   );
