@@ -2,8 +2,8 @@ interface PlacesSortingItemProps {
   sortingItem: string;
 }
 
-export default function PlacesSortingItem ({sortingItem}: PlacesSortingItemProps) : JSX.Element {
+export default function PlacesSortingItem({sortingItem}: PlacesSortingItemProps): JSX.Element {
   return (
-    <li className="places__option" tabIndex="0">{sortingItem}</li>
+    <li className="places__option" tabIndex={0}>{sortingItem}</li>
   );
 }
