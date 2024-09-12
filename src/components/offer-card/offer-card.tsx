@@ -35,10 +35,10 @@ function getImageSize(size: Size) {
 }
 
 function OfferCard({
-                     offer,
-                     variant,
-                     size,
-                   }: OfferCardProps): JSX.Element {
+  offer,
+  variant,
+  size,
+}: OfferCardProps): JSX.Element {
   return (
     <article className={clsx(variant && `${variant}__card`, 'place-card')}>
       {
