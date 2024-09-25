@@ -5,6 +5,8 @@ import MainPage from '@pages/main-page';
 import FavoritePage from "@pages/favorites-page";
 import ProtectRoute from "@components/protect-route/protect-route";
 import NotFoundPage from "@pages/not-found-page";
+import LoginPage from "@pages/login-page/login-page";
+import OfferPage from "@pages/offer-page/offer-page";
 
 function App(): JSX.Element {
   return (
@@ -21,7 +23,15 @@ function App(): JSX.Element {
           </ProtectRoute>
         }
       />
-
+      <Route path={`${AppRoute.Offer}/:offerId`} element={<OfferPage />} />
+      <Route
+        path={AppRoute.Login}
+        element={
+          <ProtectRoute onlyUnAuth>
+            <LoginPage />
+          </ProtectRoute>
+        }
+      />
       <Route path={AppRoute.NotFound} element={<NotFoundPage/>}/>
 
     </Routes>
