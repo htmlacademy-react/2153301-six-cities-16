@@ -1,1 +1,1 @@
-import {default} from './offer-page';
+export {default} from './offer-page';

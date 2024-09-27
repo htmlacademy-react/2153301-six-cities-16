@@ -1,1 +1,1 @@
-import {default} from './protect-route';
+export {default} from './protect-route';
