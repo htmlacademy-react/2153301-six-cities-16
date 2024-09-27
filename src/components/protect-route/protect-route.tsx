@@ -7,7 +7,6 @@ export default function ProtectRoute({onlyUnAuth, children}: ProtectRouteProps) 
   const location = useLocation();
 
   if (user && onlyUnAuth) {
-    console.log(location)
     const from = location.state?.from || {pathname: '/'}
     return <Navigate to={from}/>
   }
