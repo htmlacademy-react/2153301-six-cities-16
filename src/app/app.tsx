@@ -1,6 +1,6 @@
 import {AppRoute, CityMap} from '@constants';
 import {OFFERS} from '@mocks/offers';
-import {Route, Routes} from 'react-router-dom';
+import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from "react-router-dom";
 import MainPage from '@pages/main-page';
 import FavoritePage from '@pages/favorites-page';
 import ProtectRoute from '@components/protect-route/protect-route';
@@ -9,8 +9,8 @@ import LoginPage from '@pages/login-page/login-page';
 import OfferPage from '@pages/offer-page/offer-page';
 
 function App(): JSX.Element {
-  return (
-    <Routes>
+  const oldBrowserRoutes = (
+    <Route>
       <Route
         path={AppRoute.Root}
         element={<MainPage offers={OFFERS} locations={CityMap}/>}
@@ -23,19 +23,24 @@ function App(): JSX.Element {
           </ProtectRoute>
         }
       />
-      <Route path={`${AppRoute.Offer}/:offerId`} element={<OfferPage />} />
+      <Route path={`${AppRoute.Offer}/:offerId`} element={<OfferPage/>}/>
       <Route
         path={AppRoute.Login}
         element={
           <ProtectRoute onlyUnAuth>
-            <LoginPage />
+            <LoginPage/>
           </ProtectRoute>
         }
       />
       <Route path={AppRoute.NotFound} element={<NotFoundPage/>}/>
-
-    </Routes>
+    </Route>
   );
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(oldBrowserRoutes)
+  );
+
+  return <RouterProvider router={router}/>
 }
 
 export default App;
